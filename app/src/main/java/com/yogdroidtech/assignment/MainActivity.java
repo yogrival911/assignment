@@ -118,6 +118,108 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+                spinner21.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                        String selectedValue = arrayAdapter2.getItem(i).toString();
+                        String spinner2text = spinner22.getSelectedItem().toString();
+                        String spinner3text = spinner23.getSelectedItem().toString();
+
+                        int spinner1int = Integer.parseInt(selectedValue);
+                        int spinner2int = Integer.parseInt(spinner2text);
+                        int spinner3int = Integer.parseInt(spinner3text);
+
+                        int totalSpinnerVal2 = spinner1int+spinner2int+spinner3int;
+                        int remainingQuant = maxQuantity2 - totalSpinnerVal2;
+
+                        if(remainingQuant<=0){
+                            remainingQuant2.setText("0");
+                        }
+                        else {
+                            remainingQuant2.setText(maxQuantity2-totalSpinnerVal2+"");
+
+                        }
+                        selectedQuant2.setText(totalSpinnerVal2+"");
+
+                        Log.i("selected", selectedValue+"-"+spinner2text+"-"+spinner3text);
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
+                });
+
+                spinner22.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                        String spinner1text = spinner21.getSelectedItem().toString();
+                        String selectedValue = arrayAdapter2.getItem(i).toString();
+                        String spinner3text = spinner23.getSelectedItem().toString();
+
+                        int spinner1int = Integer.parseInt(spinner1text);
+                        int spinner2int = Integer.parseInt(selectedValue);
+                        int spinner3int = Integer.parseInt(spinner3text);
+
+                        int totalSpinnerVal2 = spinner1int+spinner2int+spinner3int;
+                        int remainingQuant = maxQuantity2 - totalSpinnerVal2;
+
+                        if(remainingQuant<=0){
+                            remainingQuant2.setText("0");
+                        }
+                        else {
+                            remainingQuant2.setText(maxQuantity2-totalSpinnerVal2+"");
+
+                        }
+                        selectedQuant2.setText(totalSpinnerVal2+"");
+
+                        Log.i("selected", selectedValue+"-"+spinner1text+"-"+spinner3text);
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
+                });
+
+                spinner23.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                        String spinner1text = spinner21.getSelectedItem().toString();
+                        String spinner2text = spinner22.getSelectedItem().toString();
+                        String selectedValue = arrayAdapter2.getItem(i).toString();
+
+                        int spinner1int = Integer.parseInt(spinner1text);
+                        int spinner2int = Integer.parseInt(spinner2text);
+                        int spinner3int = Integer.parseInt(selectedValue);
+
+                        int totalSpinnerVal2 = spinner1int+spinner2int+spinner3int;
+                        int remainingQuant = maxQuantity2 - totalSpinnerVal2;
+
+                        if(remainingQuant<=0){
+                            remainingQuant2.setText("0");
+                        }
+                        else {
+                            remainingQuant2.setText(maxQuantity2-totalSpinnerVal2+"");
+
+                        }
+                        selectedQuant2.setText(totalSpinnerVal2+"");
+
+                        Log.i("selected", spinner1text+"-"+spinner2text+"-"+selectedValue);
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
+                });
+
+
+
                 int[] spinnerMaxValue = new int[maxQuantity];
                 for(int i = 0; i<maxQuantity; i++){
                     spinnerMaxValue[i]=i+1;
@@ -147,101 +249,6 @@ public class MainActivity extends AppCompatActivity {
                 int totalSpinnerVal = spinner1int+spinner2int+spinner3int;
                 remainingQuant1.setText(maxQuantity-totalSpinnerVal+"");
 
-                spinner21.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        String selectedValue = arrayAdapter2.getItem(i).toString();
-                        String spinner2text = spinner22.getSelectedItem().toString();
-                        String spinner3text = spinner23.getSelectedItem().toString();
-
-                        int spinner1int = Integer.parseInt(selectedValue);
-                        int spinner2int = Integer.parseInt(spinner2text);
-                        int spinner3int = Integer.parseInt(spinner3text);
-
-                        int totalSpinnerVal = spinner1int+spinner2int+spinner3int;
-                        int remainingQuant = maxQuantity2 - totalSpinnerVal;
-
-                        if(remainingQuant<=0){
-                            remainingQuant2.setText("0");
-                        }
-                        else {
-                            remainingQuant2.setText(maxQuantity2-totalSpinnerVal+"");
-
-                        }
-                        selectedQuant2.setText(totalSpinnerVal+"");
-
-                        Log.i("selected", selectedValue+"-"+spinner2text+"-"+spinner3text);
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> adapterView) {
-
-                    }
-                });
-
-                spinner22.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        String selectedValue = arrayAdapter2.getItem(i).toString();
-                        String spinner2text = spinner22.getSelectedItem().toString();
-                        String spinner3text = spinner23.getSelectedItem().toString();
-
-                        int spinner1int = Integer.parseInt(selectedValue);
-                        int spinner2int = Integer.parseInt(spinner2text);
-                        int spinner3int = Integer.parseInt(spinner3text);
-
-                        int totalSpinnerVal = spinner1int+spinner2int+spinner3int;
-                        int remainingQuant = maxQuantity2 - totalSpinnerVal;
-
-                        if(remainingQuant<=0){
-                            remainingQuant2.setText("0");
-                        }
-                        else {
-                            remainingQuant2.setText(maxQuantity2-totalSpinnerVal+"");
-
-                        }
-                        selectedQuant2.setText(totalSpinnerVal+"");
-
-                        Log.i("selected", selectedValue+"-"+spinner2text+"-"+spinner3text);
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> adapterView) {
-
-                    }
-                });
-
-                spinner23.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        String selectedValue = arrayAdapter2.getItem(i).toString();
-                        String spinner2text = spinner22.getSelectedItem().toString();
-                        String spinner3text = spinner23.getSelectedItem().toString();
-
-                        int spinner1int = Integer.parseInt(selectedValue);
-                        int spinner2int = Integer.parseInt(spinner2text);
-                        int spinner3int = Integer.parseInt(spinner3text);
-
-                        int totalSpinnerVal = spinner1int+spinner2int+spinner3int;
-                        int remainingQuant = maxQuantity2 - totalSpinnerVal;
-
-                        if(remainingQuant<=0){
-                            remainingQuant2.setText("0");
-                        }
-                        else {
-                            remainingQuant2.setText(maxQuantity2-totalSpinnerVal+"");
-
-                        }
-                        selectedQuant2.setText(totalSpinnerVal+"");
-
-                        Log.i("selected", selectedValue+"-"+spinner2text+"-"+spinner3text);
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> adapterView) {
-
-                    }
-                });
 
 
 
