@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.yogdroidtech.assignment.response.ItemsResponse;
+
+import java.util.stream.IntStream;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -45,10 +48,33 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<ItemsResponse> call, Response<ItemsResponse> response) {
                 ItemsResponse itemsResponse = response.body();
                 Log.i("responseyog", response.body().getMessage());
+
+
+                int maxQuantity = Integer.parseInt(response.body().getData().get(0).getMaxQty());
+                Log.i("maxQantyog", String.valueOf(maxQuantity));
                 choose.setText(response.body().getData().get(0).getName());
                 item11.setText(response.body().getData().get(0).getItemChoice().get(0).getName());
                 item12.setText(response.body().getData().get(0).getItemChoice().get(1).getName());
                 item13.setText(response.body().getData().get(0).getItemChoice().get(2).getName());
+                allowedQuant1.setText(maxQuantity+"");
+
+                int[] spinnerMaxValue = new int[maxQuantity];
+                for(int i = 0; i<maxQuantity; i++){
+                    spinnerMaxValue[i]=i+1;
+                }
+                Log.i("array", spinnerMaxValue.toString());
+
+                String[] spinnerMaxValueString = new String[maxQuantity];
+                for(int i = 0; i<maxQuantity; i++){
+                    spinnerMaxValueString[i]=i+1+"";
+                }
+
+                ArrayAdapter arrayAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, spinnerMaxValueString);
+                arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+                spinner11.setAdapter(arrayAdapter);
+                spinner12.setAdapter(arrayAdapter);
+                spinner13.setAdapter(arrayAdapter);
 
             }
 
