@@ -7,10 +7,9 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/choose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choose items from list"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -19,20 +18,20 @@
         android:layout_height="0dp"
         android:stretchColumns="*"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/choose">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/item11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Item 1" />
+                android:text="It" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/spinner11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </TableRow>
@@ -42,11 +41,13 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:id="@+id/item12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Item 1" />
 
             <Spinner
+                android:id="@+id/spinner12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </TableRow>
@@ -56,11 +57,13 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:id="@+id/item13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Item 1" />
 
             <Spinner
+                android:id="@+id/spinner13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </TableRow>
@@ -70,17 +73,50 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Allowed Quantity" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/allowedQuant1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="45" />
         </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SelectedQuantity" />
+
+            <TextView
+                android:id="@+id/selectedQuant1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="45" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reamaining Quantity" />
+
+            <TextView
+                android:id="@+id/remainingQuant1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="45" />
+        </TableRow>
+
+
     </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
